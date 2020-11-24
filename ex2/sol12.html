@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+        <ul>
+            <li>사각형의 가로 값 : </li>
+            <input type="text" id="width">                                                                                
+            <li>사각형의 세로 값 : </li>
+            <input type="text" id="height">
+        </ul>
+        <button onclick="SqCalc()">넓이 구하기</button>
+    </div>
+
+    <script>
+        function SqCalc() {
+            var width = document.querySelector("#width").value;
+            var height = document.querySelector("#height").value;
+
+            var result = width * height;
+            alert("직사각형의 너비 : " + result);
+        }
+    </script>
+</body>
+
+</html>

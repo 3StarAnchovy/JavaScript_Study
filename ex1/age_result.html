@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn" onclick="calc()">나이값 계산하기</button>
+    <div id="result" class="show"></div>
+    <script>
+        function calc() {
+            var CurrentYear = prompt("현재 년도를 입력하세요.", "yyyy");
+            var BirthYear = prompt("출생년도를 입력하세요.");
+            var yourAge = CurrentYear - BirthYear + 1;
+            document.querySelector("#result").innerHTML = "당신의 나이는 " + yourAge + "입니다."
+            // var
+            //     변수를 선언. 추가로 동시에 값을 초기화.
+            // let
+            //     블록 범위(scope) 지역 변수를 선언. 추가로 동시에 값을 초기화.
+            // const
+            //     블록 범위 읽기 전용 상수를 선언.
+        }
+    </script>
+</body>
+
+</html>
