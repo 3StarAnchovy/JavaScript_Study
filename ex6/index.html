@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+
+<body>
+    <div>
+        <h3>목록</h3>
+        <form>
+            <input type="text" autofocus="true" id="item">
+            <button id="add" class="addBtn">추가</button>
+        </form>
+    </div>
+
+    <div id="itemList">
+        Default
+    </div> 
+    <script>
+        var itemList = [];
+
+        var addBtn=document.querySelector("#add");
+        addBtn.addEventListener("click",addList());
+        function addList() {
+            var item = document.querySelector("#item").value;
+            if (item != null) {
+                itemList.push(item);
+            }
+        }
+    </script>
+</body>
+
+</html>
