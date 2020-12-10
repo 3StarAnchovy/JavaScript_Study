@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "container">
+        <img id="pic" src="images/girl.png">
+    </div>
+
+    <script>
+        var myPic = document.querySelector("#pic");
+        myPic.onclick = function()
+        {
+            //this.setAttribute("src","images/boy.png");
+            myPic.src ="images/boy.png";
+        }
+    </script>
+</body>
+</html>
