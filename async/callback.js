@@ -6,6 +6,7 @@
 function printImmediately(print) {
     print();
 }
+
 function printWhiteDelay(print, timeout) {
     setTimeout(print, timeout);
 }
@@ -18,3 +19,42 @@ console.log(3);
 printImmediately(() => console.log("hello"));
 // asynchronous callback
 printWhiteDelay(() => console.log("asynchronous callbakc"), 2000);
+
+class UserStorage {
+    loginUser(id, password, onSucess, onError) {
+        setTimeout(() => {
+            if ((id === "james" && password === "dream") || (id === "coder") && (password === "dream")) {
+                onSucess(id);
+            } else {
+                onError(new Error("not fount"));
+            }
+        }, 2000);
+    }
+
+    getRoles(user, onSucess, onError) {
+        setTimeout(() => {
+            if (user === "james") {
+                onSucess({
+                    name: "james",
+                    role: "admin"
+                });
+            } else {
+                onError(new Error("no access"));
+            }
+        }, 1000)
+    }
+}
+
+const userStorage = new UserStorage();
+const id = prompt("아이디 !");
+const password = prompt("비밀번호");
+
+userStorage.loginUser(id, password, user => {
+    userStorage.getRoles(user, userWriteRole => {
+        alert("hello"+userWriteRole.name+" "+userWriteRole.role);
+    }, error => {
+        alert(error);
+    })
+}, error => {
+    console.log(error);
+});
