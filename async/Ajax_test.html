@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        // $.ajax({
+        //     method: "POST",
+        //     url: "https://dapi.kakao.com/v2/translation/translate",
+        //     data: {
+        //         query: "안녕",
+        //         src_lang: "kr",
+        //         target_lang: "en"
+        //     },
+        //     headers: {
+        //         Authorization: "KakaoAK 32dc4f706e880a7711d7a57429820538"
+        //     }
+        // })
+        // .done(function (msg) {
+        //     console.log(msg);
+        // });
+        const xmhl = new XMLHttpRequest();
+            xmhl.open('POST', "https://dapi.kakao.com/v2/translation/translate");
+            xmhl.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmhl.setRequestHeader('Authorization', "KakaoAK 32dc4f706e880a7711d7a57429820538");
+            const data = {
+                query: "안녕",
+                src_lang: "kr",
+                target_lang: "en"
+            };
+            xmhl.send(Object.keys(data).map(key => `${key}=${data[key]}`).join('&'));
+            console.dir(xmhl);
+    </script>
+</body>
+</html>
